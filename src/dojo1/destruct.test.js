@@ -1,6 +1,3 @@
-const dojo1 = require('./dojo1');
-// const { exercie1, exercie2 } = require('./dojo1');
-
 describe("Exercice 1 : Destruct Tableaux", () => {
     test("Destructurer un tableau dans plusieurs variables", () => {
 
@@ -65,7 +62,7 @@ describe("Exercice 1 : Destruct Tableaux", () => {
 
         expect(red).toBe('rouge');
         expect(pink).toBe('rose');
-    })
+    });
 });
 
 describe("Exercice 2 : Destruct Objects", () => {
@@ -127,5 +124,61 @@ describe("Exercice 2 : Destruct Objects", () => {
         expect(firstName).toBe('Michel');
         expect(lastName).toBe('Chartrand');
         expect(age).toBe(18);
-    })
+    });
+});
+
+describe("Exercice 3 : Destruct dans fonctions", () => {
+    test("Destructurer un Objet dans les parametres d'une fonction", () => {
+
+        const personne = { firstName: 'Michel', lastName: 'Chartrand', age: 93 };
+        // Ecrire un fonction qui affiche les infos d'une personne
+        let afficherPersonne = () => { };
+
+        //#region Reponse ES5
+        // afficherPersonne = (p) => `${p.firstName} ${p.lastName}, ${p.age} ans`
+        //#endregion
+
+        //#region Reponse ES6
+        afficherPersonne = ({ firstName, lastName, age }) => `${firstName} ${lastName}, ${age} ans`
+        //#endregion
+
+        expect(afficherPersonne(personne)).toBe('Michel Chartrand, 93 ans');
+    });
+
+    test("Destructurer un Tableau dans les parametres d'une fonction", () => {
+
+        const colorArray = ['rouge', 'bleu', 'vert', 'rose'];
+        // Ecrire un fonction qui affiche le premier et le troisième elt d'un tableau
+        let afficherPremierEtTroisieme = () => { };
+
+        //#region Reponse ES5
+        afficherPremierEtTroisieme = (tab) => `${tab[0]} et ${tab[2]}`;
+        //#endregion
+
+        //#region Reponse ES6
+        // afficherPremierEtTroisieme = ([first, , third]) => `${first} et ${third}`;
+        //#endregion
+
+        expect(afficherPremierEtTroisieme(colorArray)).toBe('rouge et vert');
+    });
+
+    test("Combiner les destruct d'objets et de tableau dans des parametres de fonction.", () => {
+
+        const personArray = [
+            { firstName: 'Michel', lastName: 'Chartrand', age: 93 },
+            { firstName: 'Robert', lastName: 'Burns', age: 77 }
+        ];
+        // Ecrire un fonction qui affiche le premier et le troisième elt d'un tableau
+        let afficherLesNoms = () => { };
+
+        //#region Reponse ES5
+        // afficherLesNoms = (tab) => `${tab[0].lastName} et ${tab[1].lastName}`;
+        //#endregion
+
+        //#region Reponse ES6
+        afficherLesNoms = ([{ lastName: lastName1 }, { lastName: lastName2 }]) => `${lastName1} et ${lastName2}`;
+        //#endregion
+
+        expect(afficherLesNoms(personArray)).toBe('Chartrand et Burns');
+    });
 })
