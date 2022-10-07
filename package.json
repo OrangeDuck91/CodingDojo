@@ -1,0 +1,22 @@
+{
+  "name": "codingdojo",
+  "version": "1.0.0",
+  "description": "Environnement basique pour coding dojo avec TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrangeDuck91/CodingDojo.git"
+  },
+  "keywords": [
+    "coding",
+    "dojo"
+  ],
+  "author": "Yohann HAY",
+  "bugs": {
+    "url": "https://github.com/OrangeDuck91/CodingDojo/issues"
+  },
+  "homepage": "https://github.com/OrangeDuck91/CodingDojo#readme"
+}
