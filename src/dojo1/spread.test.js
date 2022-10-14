@@ -1,4 +1,4 @@
-describe("Exercice 4 : Spread Tableaux", () => {
+describe("Exercice 1 : Spread Tableaux", () => {
     test("Combiner 2 tableaux", () => {
 
         const numbersOne = [1, 2, 3];
@@ -34,7 +34,8 @@ describe("Exercice 4 : Spread Tableaux", () => {
     });
 });
 
-describe("Exercice 5 : Spread Objects", () => {
+
+describe("Exercice 2 : Spread Objects", () => {
     test("Combiner 2 objets", () => {
 
         const personne = { firstName: 'Michel', lastName: 'Chartrand', age: 93 };
@@ -80,10 +81,10 @@ describe("Exercice 5 : Spread Objects", () => {
             age: 18,
         });
     });
+});
 
-})
 
-describe("Exercice 6 : Spread Strings et parametres de Fonction ", () => {
+describe("Exercice 3 : Spread Strings et parametres de Fonction ", () => {
     test("Éclater une string en un tableau caractères", () => {
 
         const pouet = "Pouet";
@@ -120,5 +121,4 @@ describe("Exercice 6 : Spread Strings et parametres de Fonction ", () => {
 
         expect(resultat).toEqual('param1=a; param2=b; param3=c;');
     });
-
-})
+});

@@ -1,4 +1,4 @@
-describe("Exercice 1 : Destruct Tableaux", () => {
+describe("Exercice 4 : Destruct Tableaux", () => {
     test("Destructurer un tableau dans plusieurs variables", () => {
 
         let red, blue, green, pink;
@@ -65,7 +65,8 @@ describe("Exercice 1 : Destruct Tableaux", () => {
     });
 });
 
-describe("Exercice 2 : Destruct Objects", () => {
+
+describe("Exercice 5 : Destruct Objects", () => {
     test("Destructurer un Objet dans des variables", () => {
 
         const personne = { firstName: 'Michel', lastName: 'Chartrand', age: 93 };
@@ -127,7 +128,8 @@ describe("Exercice 2 : Destruct Objects", () => {
     });
 });
 
-describe("Exercice 3 : Destruct dans fonctions", () => {
+
+describe("Exercice 6 : Destruct dans fonctions", () => {
     test("Destructurer un Objet dans les parametres d'une fonction", () => {
 
         const personne = { firstName: 'Michel', lastName: 'Chartrand', age: 93 };
