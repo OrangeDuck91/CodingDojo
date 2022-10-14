@@ -1,24 +1,121 @@
-describe("Exercice 4 : Destruct Tableaux", () => {
-    test("Destructurer un tableau dans plusieurs variables", () => {
+describe("Exercice 4 : Spread Tableaux", () => {
+    test("Combiner 2 tableaux", () => {
 
-        let red, blue, green, pink;
-        const colorArray = ['rouge', 'bleu', 'vert'];
-        // Assigner les variables avec les valeurs du tableau 
+        const numbersOne = [1, 2, 3];
+        const numbersTwo = [4, 5, 6];
+        let numbersCombined = [];
+        // Combiner les 2 tableaux dans un nouveau tableau
 
         //#region Reponse ES5
-        red = colorArray[0];
-        blue = colorArray[1];
-        green = colorArray[2];
-        pink = colorArray[3];
+        numbersCombined = numbersOne.concat(numbersTwo);
         //#endregion
 
         //#region Reponse ES6
-        // [red, blue, green, pink] = colorArray;
+        // numbersCombined = [...numbersOne, ...numbersTwo]
         //#endregion
 
-        expect(red).toBe('rouge');
-        expect(blue).toBe('bleu');
-        expect(green).toBe('vert');
-        expect(pink).toBe(undefined);
+        expect(numbersCombined).toEqual([1, 2, 3, 4, 5, 6]);
+    });
+
+    test("Ajouter des éléments à un tableau", () => {
+
+        let numbersTwo = [4, 5, 6];
+        // Construire un tableau contenant 1,2,3 et les elements de numbersTwo
+
+        //#region Reponse ES5
+        let numbersOne = [1, 2, 3].concat(numbersTwo);
+        //#endregion
+
+        //#region Reponse ES6
+        // let numbersOne = [1, 2, 3, ...numbersTwo];
+        //#endregion
+
+        expect(numbersOne).toEqual([1, 2, 3, 4, 5, 6]);
     });
 });
+
+describe("Exercice 5 : Spread Objects", () => {
+    test("Combiner 2 objets", () => {
+
+        const personne = { firstName: 'Michel', lastName: 'Chartrand', age: 93 };
+        const voiture = { marque: 'Toyota', modele: 'Echo', annee: '2007' }
+        let personneVoiture;
+        // Combiner les propriétés de 2 objets en un seul
+
+        //#region Reponse ES5
+        personneVoiture = Object.assign({}, personne, voiture);
+        //#endregion
+
+        //#region Reponse ES6
+        // personneVoiture = { ...personne, ...voiture }
+        //#endregion
+
+        expect(personneVoiture).toEqual({
+            firstName: 'Michel',
+            lastName: 'Chartrand',
+            age: 93,
+            marque: 'Toyota',
+            modele: 'Echo',
+            annee: '2007'
+        });
+    });
+
+    test("Copier un objet en modifiant une propriété", () => {
+
+        const personne = { firstName: 'Michel', lastName: 'Chartrand', age: 93 };
+        let personneCopy;
+        // Copier un objet en modifiant une propriété (Très utile avec React/Redux et les immutable objects)
+
+        //#region Reponse ES5
+        personneCopy = Object.assign({}, personne, { age: 18 });
+        //#endregion
+
+        //#region Reponse ES6
+        // personneCopy = { ...personne, age: 18 };
+        //#endregion
+
+        expect(personneCopy).toEqual({
+            firstName: 'Michel',
+            lastName: 'Chartrand',
+            age: 18,
+        });
+    });
+
+})
+
+describe("Exercice 6 : Spread Strings et parametres de Fonction ", () => {
+    test("Copier un objet en modifiant une propriété", () => {
+
+        const pouet = "Pouet";
+        let spreadedString;
+        // Éclater une string en plusieurs caractères
+
+        //#region Reponse ES5
+        spreadedString = pouet.split('');
+        //#endregion
+
+        //#region Reponse ES6
+        // spreadedString = [...pouet]
+        //#endregion
+
+        expect(spreadedString).toEqual(['P', 'o', 'u', 'e', 't']);
+    });
+
+    test("Copier un objet en modifiant une propriété", () => {
+
+        const pouet = "Pouet";
+        let spreadedString;
+        // Éclater une string en plusieurs caractères
+
+        //#region Reponse ES5
+        spreadedString = pouet.split('');
+        //#endregion
+
+        //#region Reponse ES6
+        // spreadedString = [...pouet]
+        //#endregion
+
+        expect(spreadedString).toEqual(['P', 'o', 'u', 'e', 't']);
+    });
+
+})
