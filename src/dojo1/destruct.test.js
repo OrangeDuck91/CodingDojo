@@ -135,11 +135,11 @@ describe("Exercice 3 : Destruct dans fonctions", () => {
         let afficherPersonne = () => { };
 
         //#region Reponse ES5
-        // afficherPersonne = (p) => `${p.firstName} ${p.lastName}, ${p.age} ans`
+        afficherPersonne = (p) => `${p.firstName} ${p.lastName}, ${p.age} ans`
         //#endregion
 
         //#region Reponse ES6
-        afficherPersonne = ({ firstName, lastName, age }) => `${firstName} ${lastName}, ${age} ans`
+        // afficherPersonne = ({ firstName, lastName, age }) => `${firstName} ${lastName}, ${age} ans`
         //#endregion
 
         expect(afficherPersonne(personne)).toBe('Michel Chartrand, 93 ans');

@@ -38,7 +38,7 @@ describe("Exercice 5 : Spread Objects", () => {
     test("Combiner 2 objets", () => {
 
         const personne = { firstName: 'Michel', lastName: 'Chartrand', age: 93 };
-        const voiture = { marque: 'Toyota', modele: 'Echo', annee: '2007' }
+        const voiture = { marque: 'Toyota', modele: 'Echo', annee: 2007 }
         let personneVoiture;
         // Combiner les propriétés de 2 objets en un seul
 
@@ -56,7 +56,7 @@ describe("Exercice 5 : Spread Objects", () => {
             age: 93,
             marque: 'Toyota',
             modele: 'Echo',
-            annee: '2007'
+            annee: 2007
         });
     });
 
@@ -84,11 +84,11 @@ describe("Exercice 5 : Spread Objects", () => {
 })
 
 describe("Exercice 6 : Spread Strings et parametres de Fonction ", () => {
-    test("Copier un objet en modifiant une propriété", () => {
+    test("Éclater une string en un tableau caractères", () => {
 
         const pouet = "Pouet";
         let spreadedString;
-        // Éclater une string en plusieurs caractères
+        // Éclater une string en un tableau de caractères
 
         //#region Reponse ES5
         spreadedString = pouet.split('');
@@ -101,21 +101,24 @@ describe("Exercice 6 : Spread Strings et parametres de Fonction ", () => {
         expect(spreadedString).toEqual(['P', 'o', 'u', 'e', 't']);
     });
 
-    test("Copier un objet en modifiant une propriété", () => {
+    test("Passer des parametres à une fonction", () => {
 
-        const pouet = "Pouet";
-        let spreadedString;
+        const parametres = ['a', 'b', 'c'];
+        const superFonction = (param1, param2, param3) => {
+            return `param1=${param1}; param2=${param2}; param3=${param3};`
+        }
+        let resultat;
         // Éclater une string en plusieurs caractères
 
         //#region Reponse ES5
-        spreadedString = pouet.split('');
+        resultat = superFonction(parametres[0], parametres[1], parametres[2]);
         //#endregion
 
         //#region Reponse ES6
-        // spreadedString = [...pouet]
+        // resultat = superFonction(...parametres);
         //#endregion
 
-        expect(spreadedString).toEqual(['P', 'o', 'u', 'e', 't']);
+        expect(resultat).toEqual('param1=a; param2=b; param3=c;');
     });
 
 })
