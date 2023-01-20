@@ -6,14 +6,14 @@ describe("Exercice 4 : Destruct Tableaux", () => {
         // Assigner les variables avec les valeurs du tableau 
 
         //#region Reponse ES5
-        red = colorArray[0];
-        blue = colorArray[1];
-        green = colorArray[2];
-        pink = colorArray[3];
+        // red = colorArray[0];
+        // blue = colorArray[1];
+        // green = colorArray[2];
+        // pink = colorArray[3];
         //#endregion
 
         //#region Reponse ES6
-        // [red, blue, green, pink] = colorArray;
+        // TODO
         //#endregion
 
         expect(red).toBe('rouge');
@@ -29,13 +29,13 @@ describe("Exercice 4 : Destruct Tableaux", () => {
         // Assigner les 2 variables et le reste du tableau avec les valeurs du tableau 
 
         //#region Reponse ES5
-        red = colorArray.shift();
-        blue = colorArray.shift();
-        resteDuTableau = colorArray;
+        // red = colorArray.shift();
+        // blue = colorArray.shift();
+        // resteDuTableau = colorArray;
         //#endregion
 
         //#region Reponse ES6
-        // [red, blue, ...resteDuTableau] = colorArray;
+        // TODO;
         //#endregion
 
         expect(red).toBe('rouge');
@@ -50,14 +50,12 @@ describe("Exercice 4 : Destruct Tableaux", () => {
         // Assigner les 2 variables avec des éléments distincts du tableau ?
 
         //#region Reponse ES5
-        red = colorArray[0];
-        pink = colorArray[3];
+        // red = colorArray[0];
+        // pink = colorArray[3];
         //#endregion
 
         //#region Reponse ES6
-        // [red, , , pink] = colorArray;
-        // Ou, pour une question de lisibilité
-        // [red, _, _, pink] = colorArray;
+        // TODO
         //#endregion
 
         expect(red).toBe('rouge');
@@ -73,13 +71,13 @@ describe("Exercice 5 : Destruct Objects", () => {
         // Assigner les propriétés de l'objet à des variables
 
         //#region Reponse ES5
-        const firstName = personne.firstName;
-        const lastName = personne.lastName;
-        const age = personne.age;
+        // const firstName = personne.firstName;
+        // const lastName = personne.lastName;
+        // const age = personne.age;
         //#endregion
 
         //#region Reponse ES6
-        // const { firstName, lastName, age } = personne;
+        // TODO
         //#endregion
 
         expect(firstName).toBe('Michel');
@@ -93,13 +91,13 @@ describe("Exercice 5 : Destruct Objects", () => {
         // Assigner les propriétés de l'objet à des variables de nom différent
 
         //#region Reponse ES5
-        const prenom = personne.firstName;
-        const nom = personne.lastName;
-        const experience = personne.age;
+        // const prenom = personne.firstName;
+        // const nom = personne.lastName;
+        // const experience = personne.age;
         //#endregion
 
         //#region Reponse ES6
-        // let { firstName: prenom, lastName: nom, age: experience } = personne;
+        // TODO
         //#endregion
 
         expect(prenom).toBe('Michel');
@@ -119,7 +117,7 @@ describe("Exercice 5 : Destruct Objects", () => {
         //#endregion
 
         //#region Reponse ES6
-        const { firstName, lastName, age = 18 } = personne;
+        // TODO
         //#endregion
 
         expect(firstName).toBe('Michel');
@@ -137,11 +135,11 @@ describe("Exercice 6 : Destruct dans fonctions", () => {
         let afficherPersonne = () => { };
 
         //#region Reponse ES5
-        afficherPersonne = (p) => `${p.firstName} ${p.lastName}, ${p.age} ans`
+        // afficherPersonne = (p) => `${p.firstName} ${p.lastName}, ${p.age} ans`
         //#endregion
 
         //#region Reponse ES6
-        // afficherPersonne = ({ firstName, lastName, age }) => `${firstName} ${lastName}, ${age} ans`
+        // TODO
         //#endregion
 
         expect(afficherPersonne(personne)).toBe('Michel Chartrand, 93 ans');
@@ -154,11 +152,11 @@ describe("Exercice 6 : Destruct dans fonctions", () => {
         let afficherPremierEtTroisieme = () => { };
 
         //#region Reponse ES5
-        afficherPremierEtTroisieme = (tab) => `${tab[0]} et ${tab[2]}`;
+        // afficherPremierEtTroisieme = (tab) => `${tab[0]} et ${tab[2]}`;
         //#endregion
 
         //#region Reponse ES6
-        // afficherPremierEtTroisieme = ([first, , third]) => `${first} et ${third}`;
+        // TODO
         //#endregion
 
         expect(afficherPremierEtTroisieme(colorArray)).toBe('rouge et vert');
@@ -178,7 +176,7 @@ describe("Exercice 6 : Destruct dans fonctions", () => {
         //#endregion
 
         //#region Reponse ES6
-        afficherLesNoms = ([{ lastName: lastName1 }, { lastName: lastName2 }]) => `${lastName1} et ${lastName2}`;
+        // TODO
         //#endregion
 
         expect(afficherLesNoms(personArray)).toBe('Chartrand et Burns');

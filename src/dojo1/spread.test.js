@@ -7,11 +7,11 @@ describe("Exercice 1 : Spread Tableaux", () => {
         // Combiner les 2 tableaux dans un nouveau tableau
 
         //#region Reponse ES5
-        numbersCombined = numbersOne.concat(numbersTwo);
+        // numbersCombined = numbersOne.concat(numbersTwo);
         //#endregion
 
         //#region Reponse ES6
-        // numbersCombined = [...numbersOne, ...numbersTwo]
+        // TODO
         //#endregion
 
         expect(numbersCombined).toEqual([1, 2, 3, 4, 5, 6]);
@@ -23,11 +23,11 @@ describe("Exercice 1 : Spread Tableaux", () => {
         // Construire un tableau contenant 1,2,3 et les elements de numbersTwo
 
         //#region Reponse ES5
-        let numbersOne = [1, 2, 3].concat(numbersTwo);
+        // let numbersOne = [1, 2, 3].concat(numbersTwo);
         //#endregion
 
         //#region Reponse ES6
-        // let numbersOne = [1, 2, 3, ...numbersTwo];
+        // TODO
         //#endregion
 
         expect(numbersOne).toEqual([1, 2, 3, 4, 5, 6]);
@@ -44,11 +44,11 @@ describe("Exercice 2 : Spread Objects", () => {
         // Combiner les propriétés de 2 objets en un seul
 
         //#region Reponse ES5
-        personneVoiture = Object.assign({}, personne, voiture);
+        // personneVoiture = Object.assign({}, personne, voiture);
         //#endregion
 
         //#region Reponse ES6
-        // personneVoiture = { ...personne, ...voiture }
+        // TODO
         //#endregion
 
         expect(personneVoiture).toEqual({
@@ -68,11 +68,11 @@ describe("Exercice 2 : Spread Objects", () => {
         // Copier un objet en modifiant une propriété (Très utile avec React/Redux et les immutable objects)
 
         //#region Reponse ES5
-        personneCopy = Object.assign({}, personne, { age: 18 });
+        // personneCopy = Object.assign({}, personne, { age: 18 });
         //#endregion
 
         //#region Reponse ES6
-        // personneCopy = { ...personne, age: 18 };
+        // TODO
         //#endregion
 
         expect(personneCopy).toEqual({
@@ -92,11 +92,11 @@ describe("Exercice 3 : Spread Strings et parametres de Fonction ", () => {
         // Éclater une string en un tableau de caractères
 
         //#region Reponse ES5
-        spreadedString = pouet.split('');
+        // spreadedString = pouet.split('');
         //#endregion
 
         //#region Reponse ES6
-        // spreadedString = [...pouet]
+        // TODO
         //#endregion
 
         expect(spreadedString).toEqual(['P', 'o', 'u', 'e', 't']);
@@ -112,11 +112,11 @@ describe("Exercice 3 : Spread Strings et parametres de Fonction ", () => {
         // Éclater une string en plusieurs caractères
 
         //#region Reponse ES5
-        resultat = superFonction(parametres[0], parametres[1], parametres[2]);
+        // resultat = superFonction(parametres[0], parametres[1], parametres[2]);
         //#endregion
 
         //#region Reponse ES6
-        // resultat = superFonction(...parametres);
+        // TODO
         //#endregion
 
         expect(resultat).toEqual('param1=a; param2=b; param3=c;');
