@@ -36,11 +36,13 @@ describe("Exercice 4 : Destruct Tableaux", () => {
 
         //#region Reponse ES6
         // [red, blue, ...resteDuTableau] = colorArray;
+        // Grosse différence avec ES5 : Le tableau d'origine n'est pas affecté, on copie les valeurs.
         //#endregion
 
         expect(red).toBe('rouge');
         expect(blue).toBe('bleu');
         expect(resteDuTableau).toEqual(['vert', 'rose']);
+        // expect(colorArray).toEqual(['rouge', 'bleu', 'vert', 'rose']);
     });
 
     test("Destructurer le premier et le dernier élément d'un tableau dans 2 variables", () => {
@@ -56,7 +58,7 @@ describe("Exercice 4 : Destruct Tableaux", () => {
 
         //#region Reponse ES6
         // [red, , , pink] = colorArray;
-        // Ou, pour une question de lisibilité
+        // // Ou, pour une question de lisibilité
         // [red, _, _, pink] = colorArray;
         //#endregion
 
@@ -170,15 +172,15 @@ describe("Exercice 6 : Destruct dans fonctions", () => {
             { firstName: 'Michel', lastName: 'Chartrand', age: 93 },
             { firstName: 'Robert', lastName: 'Burns', age: 77 }
         ];
-        // Ecrire un fonction qui affiche le premier et le troisième elt d'un tableau
+        // Ecrire un fonction qui affiche les noms (LastName) des personnes 
         let afficherLesNoms = () => { };
 
         //#region Reponse ES5
-        // afficherLesNoms = (tab) => `${tab[0].lastName} et ${tab[1].lastName}`;
+        afficherLesNoms = (tab) => `${tab[0].lastName} et ${tab[1].lastName}`;
         //#endregion
 
         //#region Reponse ES6
-        afficherLesNoms = ([{ lastName: lastName1 }, { lastName: lastName2 }]) => `${lastName1} et ${lastName2}`;
+        // afficherLesNoms = ([{ lastName: lastName1 }, { lastName: lastName2 }]) => `${lastName1} et ${lastName2}`;
         //#endregion
 
         expect(afficherLesNoms(personArray)).toBe('Chartrand et Burns');

@@ -121,4 +121,5 @@ describe("Exercice 3 : Spread Strings et parametres de Fonction ", () => {
 
         expect(resultat).toEqual('param1=a; param2=b; param3=c;');
     });
+
 });
