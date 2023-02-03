@@ -113,13 +113,13 @@ describe("Exercice 5 : Destruct Objects", () => {
         // Assigner les propriétés de l'objet à des variables avec une valeur par défaut à 18 pour l'age
 
         //#region Reponse ES5
-        // const firstName = personne.firstName;
-        // const lastName = personne.lastName;
-        // const age = personne.age || 18;
+        const firstName = personne.firstName;
+        const lastName = personne.lastName;
+        const age = personne.age || 18;
         //#endregion
 
         //#region Reponse ES6
-        const { firstName, lastName, age = 18 } = personne;
+        // const { firstName, lastName, age = 18 } = personne;
         //#endregion
 
         expect(firstName).toBe('Michel');
